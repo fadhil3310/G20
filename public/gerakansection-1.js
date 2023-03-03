@@ -12,20 +12,20 @@ export function gerakan1() {
     background.animate([
         {transform: 'scale(1)'},
         {transform: 'scale(3)'}
-    ], { duration: 3500, easing: 'ease-out' })
+    ], { duration: 4000, easing: 'ease-out' })
     background.style.transform = 'scale(3)'
     
     titleh1.animate([
         {transform: 'scale(1)', fontWeight: 100},
         {transform: 'scale(3)', fontWeight: 800}
-    ], { duration: 3500, easing: 'ease-out' })
+    ], { duration: 4000, easing: 'ease-out' })
     titleh1.style.transform = 'scale(3)'
     titleh1.style.fontWeight = 800
 
     backgroundOverlay.animate([
         {transform: 'scale(1)'},
         {transform: 'scale(15)'}
-    ], { duration: 1000, easing: 'ease-out' })
+    ], { duration: 1500, easing: 'ease-out' })
     backgroundOverlay.style.transform = 'scale(15)'
 }
 
