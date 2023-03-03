@@ -109,11 +109,39 @@ body {
     width: 100vw;
     height: 100vh;
 
-    #title-s2 {
+    #title-container-s2 {
         position: fixed;
-        top: 400px;
+        top: 40%;
         left: 50px;
+        
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: white;
+
+        #title-s2 {
+            margin: 0;
+
+            font-size: 90px;   
+            animation: title-s2-pertama-tampil 1s;
+        }
+        #title-kr-s2 {
+            margin: 0;
+
+            font-size: 40px;
+            font-weight: 100;
+            animation: title-s2-pertama-tampil 1.5s;
+        }
+
+        @keyframes title-s2-pertama-tampil {
+            from {
+                opacity: 0;
+                translate: 400px;
+            }
+        }
+        @keyframes title-kr-s2-pertama-tampil {
+            from {
+                opacity: 0;
+                translate: 800px;
+            }
+        }
     }
 }
