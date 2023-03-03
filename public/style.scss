@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@1,500&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+body {
+    margin: 0;
+
+    background-color: black;
+}
+
+* {
+    user-select: none;
+}
+
+#section-1 {
+    width: 100vw;
+    height: 100vh;
+
+    #background-s1 {
+        display: none;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        //will-change: transform;
+    }
+    
+    #title-container-s1 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: white;
+
+        //will-change: transform;
+        
+        
+
+        #title-container-1-s1 {
+            font-size: 60px;
+            font-family: 'Montserrat';
+            font-weight: 100;
+        }
+    }
+
+    #background-overlay-s1 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform-origin: 0 100%;
+        // background: radial-gradient(circle at bottom, transparent, black 40%)
+        background: linear-gradient(220deg, black 90%, transparent)
+    }
+
+    #next-container-s1 {
+        position: fixed;
+        bottom: 100px;
+        width: 100%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        
+        animation: show-next-container 0.5s;
+
+        button {
+            padding: 16px;
+
+            color: black;
+            background: yellow;
+            font-size: 40px;
+            font-family: 'Climate Crisis';
+            cursor: pointer;
+            box-shadow: 0 0 20px 5px red;
+            border: 5px solid black;
+            transition: 0.5s transform;
+
+            span {
+                font-style: italic;
+            }
+        }
+
+        button:active {
+            transform: scale(0.75);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        @keyframes show-next-container {
+            from {
+                transform: translateY(200px);
+            }
+        }
+        
+    }
+}
+
