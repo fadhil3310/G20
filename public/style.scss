@@ -104,3 +104,16 @@ body {
     }
 }
 
+#section-2 {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+
+    #title-s2 {
+        position: fixed;
+        top: 400px;
+        left: 50px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+    }
+}
