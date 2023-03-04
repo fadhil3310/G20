@@ -14,6 +14,7 @@ body {
 }
 
 #section-1 {
+    position: fixed;
     width: 100vw;
     height: 100vh;
 
@@ -74,11 +75,10 @@ body {
             padding: 16px;
 
             color: black;
-            background: yellow;
+            background: #5fdb6e;
             font-size: 40px;
             font-family: 'Climate Crisis';
             cursor: pointer;
-            box-shadow: 0 0 20px 5px red;
             border: 5px solid black;
             transition: 0.5s transform;
 
@@ -105,9 +105,12 @@ body {
 }
 
 #section-2 {
+    position: fixed;
     display: none;
     width: 100vw;
     height: 100vh;
+
+    perspective: 1000px;
 
     #title-container-s2 {
         position: fixed;
@@ -116,6 +119,8 @@ body {
         
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: white;
+
+        transform-origin: 100% 50%;
 
         #title-s2 {
             margin: 0;
@@ -141,6 +146,161 @@ body {
             from {
                 opacity: 0;
                 translate: 800px;
+            }
+        }
+    }
+
+    #line-container-s2 {
+        position: fixed;
+        top: 20%;
+
+        #line-1-s2 {
+            position: absolute;
+            height: 40px;
+            width: 200px;
+            background: red;
+            box-shadow: 0 0 20px red;
+            animation: abc 2s;
+        }
+
+        @keyframes abc {
+            to {
+                width: 800px;
+            }
+        }
+    }
+
+    #background-container-s2 {
+        display: none;
+        position: fixed;
+        right: 0;
+        width: 100%;
+        height: 100%;
+
+        #side-s2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 390px;
+            height: 100%;
+
+            background: url(Lingkaran.svg), linear-gradient(to bottom, #ac3636,#481d1d);
+            background-repeat: no-repeat;
+            box-shadow: -10px 0 10px #00000075 inset;
+        }
+
+        #decoration-container-s2 {
+            position: absolute;
+            top: 0;
+            left: 390px;
+            width: 40px;
+            height: 100%;
+
+            #decoration-1-s2 {
+                width: 100%;
+                height: 100px;
+    
+                background: #ee1f34;
+            }
+    
+            #decoration-2-s2 {
+                width: 100%;
+                height: 100px;
+    
+                background: #26225c;
+            }
+    
+            #decoration-3-s2 {
+                width: 100%;
+                height: 100%;
+    
+                background: gray;
+            }
+        }
+
+        #content-container-s2 {
+            position: fixed;
+            top: 0;
+            left: 430px;
+            width: calc(100% + 1000px);
+            height: 100%;
+
+            background: white;
+
+            #kertas-s2 {
+                display: none;
+                position: absolute;
+                width: 700px;
+                padding: 16px;
+
+                transform-origin: 100% 100%;
+
+                background: url(marjan-blan-marjanblan-_kUxT8WkoeY-unsplash.jpg);
+                box-shadow: 0 10px 20px #0009;
+                font-size: 30px;
+                font-family: 'Montserrat';
+            }
+
+            #content-side-container-s2 {
+                position: absolute;
+                top: 0;
+                left: 936px;
+                width: 100%;
+                height: 100%;
+
+                h1 {
+                    position: absolute;
+                    left: 50px;
+                    margin: 0;
+
+                    background: linear-gradient(#ee1f34, #26225c);
+                    background-clip: text;
+                    color: transparent;
+                    font-size: 140px;
+                    font-family: 'Montserrat';
+                }
+
+                #content-side-line-s2 {
+                    position: absolute;
+                    left: 330px;
+                    
+                }
+
+                #content-side-chart-container-s2 {
+                    display: none;
+                    position: absolute;
+                    left: 650px;
+                    width: 300px;
+                    height: 100%;
+                    padding: 16px;
+                    box-sizing: border-box;
+                    flex-direction: column;
+
+                    @keyframes show-content-side-chart {
+                        from {
+                            transform: scale(0);
+                        }
+                        to {
+                            transform: scale(1);
+                        }
+                    }
+    
+                    #content-side-1-s2 {
+                        animation: show-content-side-chart 1s;
+                    }
+    
+                    #content-side-2-s2 {
+                        animation: show-content-side-chart 1.5s;
+                    }
+    
+                    #content-side-3-s2 {
+                        animation: show-content-side-chart 2s;
+                    }
+                }
+
+                img {
+                    height: 100%;
+                }
             }
         }
     }

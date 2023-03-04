@@ -7,6 +7,8 @@ window.addEventListener('load', () => {
     daftarGerakan(0, 2, section1.gerakan3)
 
     daftarGerakan(1, 0, section2.gerakan1)
+    daftarGerakan(1, 1, section2.gerakan2)
+    daftarGerakan(1, 2, section2.gerakan3)
 
     mulaiPresentasi()
 })

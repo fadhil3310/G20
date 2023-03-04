@@ -10,7 +10,7 @@ const nextButton = document.querySelector('#next-button-s1')
 
 export function gerakan1() {
     background.style.display = 'block'
-    background.style.opacity = '1'
+    background.play()
     background.animate([
         {transform: 'scale(1)'},
         {transform: 'scale(3)'}
@@ -29,13 +29,26 @@ export function gerakan1() {
         {transform: 'scale(15)'}
     ], { duration: 2000, easing: 'ease-out' })
     backgroundOverlay.style.transform = 'scale(15)'
+
+    // Kunci keyboard selama 8 detik
+    kunciKeyboard = true
+    setTimeout(() => kunciKeyboard = false, 8000)
 }
 
+/**
+ * Buat nampilin tombol "Lanjut ->"
+ */ 
 export function gerakan2() {
     nextButtonContainer.style.display = 'flex'
     nextButton.addEventListener('click', () => gerakan3())
+
+    // Kunci keyboard
+    kunciKeyboard = true
 }
 
+/**
+ * Buat penutupan bagian opening
+ */
 export function gerakan3() {
     titleh1.animate([
         {transform: 'scale(3) translateX(0)'},
@@ -61,6 +74,4 @@ export function gerakan3() {
             keGerakanSelanjutnya()
         }, 500) 
     }, 200)
-
-
 }

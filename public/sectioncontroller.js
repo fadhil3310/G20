@@ -11,7 +11,13 @@ let sectionBerapa = 0
 /**
  * Sudah di gerakan berapakah sekarang dalam section sekarang?
  */
-let gerakanBerapa = 0
+let gerakanBerapa = -1
+
+/**
+ * Apakah untuk menavigasi antar gerakan
+ * menggunakan keyboard dikunci?
+ */
+let kunciKeyboard = false
 
 let gerakan = {
 /**
@@ -40,27 +46,31 @@ window.addEventListener('keydown', keyboardPressEvent)
 function keyboardPressEvent(ev) {
     let tombolApa = ev.code
 
-    // Jikalau operator menekan tombol "panah kanan →"
-    // Maka maju ke gerakan berikutnya
-    if (tombolApa == 'ArrowRight') {
-        keGerakanSelanjutnya()
-    }
-    // Tetapi jika operator menekan tombol "panah kiri ←"
-    // Maka mundur ke gerakan sebelumnya
-    else if (tombolApa == 'ArrowLeft') {
-        keGerakanSebelumnya()
+    if (!kunciKeyboard) {
+        // Jikalau operator menekan tombol "panah kanan →"
+        // Maka maju ke gerakan berikutnya
+        if (tombolApa == 'ArrowRight') {
+            keGerakanSelanjutnya()
+        }
+        // Tetapi jika operator menekan tombol "panah kiri ←"
+        // Maka mundur ke gerakan sebelumnya
+        else if (tombolApa == 'ArrowLeft') {
+            keGerakanSebelumnya()
+        }
     }
 }
 
 function keGerakanSelanjutnya() {
-    if (gerakanBerapa < gerakan[sectionBerapa].length) {
-        gerakan[sectionBerapa][gerakanBerapa++]()
+    if (gerakanBerapa + 1 < gerakan[sectionBerapa].length) {
+        gerakanBerapa++
+        gerakan[sectionBerapa][gerakanBerapa]()
     } else {
         if (sectionBerapa + 1 < Object.entries(gerakan).length) {
             sectionBerapa++
             gerakanBerapa = 0
             gerakan[sectionBerapa][gerakanBerapa]()
         } else {
+            alert('Presentasi selesai')
             console.log('Presentasi selesai')
         }
     }
