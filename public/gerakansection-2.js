@@ -13,6 +13,7 @@ const contentSideChartContainer = document.querySelector('#content-side-chart-co
 
 const kertas = document.querySelector('#kertas-s2')
 
+// Tampilkan tulisan "Apa itu G20?"
 export function gerakan1() {
     section2.style.display = 'block'
 
@@ -70,7 +71,7 @@ export function gerakan2() {
             }, 500)
         }, 750)
 
-    }, 1500)
+    }, 800)
 }
 
 export function gerakan3() {
@@ -90,4 +91,13 @@ export function gerakan3() {
     setTimeout(() => {
         contentSideChartContainer.style.display = 'flex'
     }, 1500)
+}
+
+export function gerakan4() {
+    backgroundContainer.animate([
+        {transform: 'translateX(-1000px)'},
+        {transform: 'translateX(-2000px)'}
+    ], { duration: 1500, easing: 'ease-out' })
+    backgroundContainer.style.transform = 'translateX(-2000px)'
+    keGerakanSelanjutnya()
 }

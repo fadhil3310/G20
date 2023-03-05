@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three/examples/jsm/"
+            }
+        }
+    </script>
+    <script src="globe.js" type="module"></script>
+    <script>
+    let moveSpeed = 0.005
+    function printSpeed() {
+        console.log(moveSpeed)
+    }
+    function setSpeed(speed) {
+        moveSpeed = speed
+        console.log(moveSpeed)
+    }
+    function setSpeedFromTo(from, to, duration) {
+        let difference = from - to
+        if (difference < 0)
+            difference *= -1
+        console.log('difference', difference, 'from', from, 'to', to)
+        let acceleration = difference / ( duration / 0.05 )
+        moveSpeed = from
+        console.log('acceleration', acceleration)
+
+        let id = setInterval(() => {
+            if (to < from) {
+                moveSpeed = parseFloat((moveSpeed - acceleration).toFixed(3))
+                console.log(moveSpeed)
+                if (moveSpeed <= to) {
+                    clearInterval(id)
+                    console.log('interval end')
+                }
+            } else {
+                moveSpeed = parseFloat((moveSpeed + acceleration).toFixed(3))
+                console.log(moveSpeed)
+                if (moveSpeed >= to) {
+                    clearInterval(id)
+                    console.log('interval end')
+                }
+            } 
+        }, 50)
+    }
+    function accelerateToRotation(y, duration) {
+        console.log(cameraOrigin.rotation.y)
+
+
+    }
+    </script>
+</head>
+<body style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    cursor: grab;
+    overflow: hidden;
+    ">
+    <canvas id="globe-canvas" width="750" height="750">
+</body>
+</html>

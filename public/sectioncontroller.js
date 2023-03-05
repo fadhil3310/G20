@@ -46,7 +46,7 @@ window.addEventListener('keydown', keyboardPressEvent)
 function keyboardPressEvent(ev) {
     let tombolApa = ev.code
 
-    if (!kunciKeyboard) {
+    // if (!kunciKeyboard) {
         // Jikalau operator menekan tombol "panah kanan →"
         // Maka maju ke gerakan berikutnya
         if (tombolApa == 'ArrowRight') {
@@ -57,7 +57,7 @@ function keyboardPressEvent(ev) {
         else if (tombolApa == 'ArrowLeft') {
             keGerakanSebelumnya()
         }
-    }
+    // }
 }
 
 function keGerakanSelanjutnya() {
