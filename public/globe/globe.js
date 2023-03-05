@@ -17,14 +17,16 @@ window.cameraOrigin.add(camera)
 camera.position.z = 10
 scene.add(window.cameraOrigin)
 
+window.globe
+
 
 function renderGlobe() {
     requestAnimationFrame(renderGlobe)
     renderer.render(scene, camera)
     
-    window.cameraOrigin.rotation.y += moveSpeed
-    if (window.cameraOrigin.rotation.y > 360) {
-        window.cameraOrigin.rotation.y = window.cameraOrigin.rotation.y - 360
+    window.globe.rotation.y += moveSpeed
+    if (window.globe.rotation.y > 360) {
+        window.globe.rotation.y = window.globe.rotation.y - 360
     }
     //window.cameraOrigin.rotation.y += 0.01
 }
@@ -36,7 +38,9 @@ function mulai() {
     loader.load('../scene.json', obj => {
         console.log(obj)
         scene.add(obj)
-        console.log(window.cameraOrigin, camera)
+
+        window.globe = obj.children.find(x => x.uuid == 'd1d096de-c590-46b4-bbc1-349734b702b9')
+
         renderGlobe()
     }, xhr => console.log('loading'), err => console.log("error loading", err))
 
@@ -53,12 +57,12 @@ function mulai() {
         if (isDown) {
             let x = (ev.screenX - firstX) / 250
             let y = (ev.screenY - firstY) / 250
-            window.cameraOrigin.rotation.x += -y
-            window.cameraOrigin.rotation.y += -x
+            window.globe.rotation.x += y
+            window.globe.rotation.y += x
             firstX = ev.screenX
             firstY = ev.screenY
+            console.log(window.globe.rotation.y)
         }
-  
     })
     window.addEventListener('pointerup', ev => {
         isDown = false

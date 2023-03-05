@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script async src="./es-module-shims.js"></script>
     <script type="importmap">
         {
             "imports": {
-                "three": "https://unpkg.com/three/build/three.module.js",
-                "three/addons/": "https://unpkg.com/three/examples/jsm/"
+                "three": "./three.module.js",
+                "three/addons/": "./"
             }
         }
     </script>
@@ -51,10 +51,36 @@
             } 
         }, 50)
     }
-    function accelerateToRotation(y, duration) {
-        console.log(cameraOrigin.rotation.y)
+    function accelerateToRotation(x, y, duration) {
+        moveSpeed = 0
+        globe.rotation.x = x
+        
+
+        let difference = (360 - globe.rotation.y) + y
+        if (difference > 0) {
+            console.log('difference more than 0')
+            //difference = (360 - window.globe.rotation.y) + difference
+        } else if (difference < 0) {
+            console.log('difference less than 0')
+        }
+
+        console.log(difference)
+        let acceleration = difference / (duration / 10)
+        
+        console.log(globe.rotation.y, difference)
 
 
+        //let acceleration = firstSpeed
+        let frame = 10
+        let id = setInterval(() => {
+            globe.rotation.y += acceleration
+            console.log(globe.rotation.y, frame, acceleration)
+            if (frame == duration) {
+                clearInterval(id)
+                console.log('interval end')
+            }
+            frame += 10
+        }, 10)
     }
     </script>
 </head>

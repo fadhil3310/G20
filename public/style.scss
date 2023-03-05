@@ -1,484 +1,678 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap");
 //@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@1,500&display=swap');
 //@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
 
 body {
-    margin: 0;
+  margin: 0;
 
-    background-color: black;
+  background-color: black;
 }
 
 * {
-    user-select: none;
+  user-select: none;
 }
 
 #section-1 {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+
+  #background-s1 {
+    display: none;
     position: fixed;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    //will-change: transform;
+  }
 
-    #background-s1 {
-        display: none;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        left: 0;
-        //will-change: transform;
+  #title-container-s1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    //will-change: transform;
+
+    #title-s1 {
+      font-size: 60px;
+      font-family: "Montserrat";
+      font-weight: 100;
     }
-    
-    #title-container-s1 {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+  }
 
-        color: white;
+  #background-overlay-s1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: 0 100%;
+    // background: radial-gradient(circle at bottom, transparent, black 40%)
+    background: linear-gradient(220deg, black 90%, transparent);
+  }
 
-        //will-change: transform;
-        
-        
+  #next-container-s1 {
+    position: fixed;
+    bottom: 100px;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
 
-        #title-s1 {
-            font-size: 60px;
-            font-family: 'Montserrat';
-            font-weight: 100;
-        }
+    animation: show-next-container 0.5s;
+
+    button {
+      padding: 16px;
+
+      color: black;
+      background: #5fdb6e;
+      font-size: 40px;
+      font-family: "Climate Crisis";
+      cursor: pointer;
+      border: 5px solid black;
+      transition: 0.5s transform;
+
+      span {
+        font-style: italic;
+      }
     }
 
-    #background-overlay-s1 {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transform-origin: 0 100%;
-        // background: radial-gradient(circle at bottom, transparent, black 40%)
-        background: linear-gradient(220deg, black 90%, transparent)
+    button:active {
+      transform: scale(0.75);
     }
 
-    #next-container-s1 {
-        position: fixed;
-        bottom: 100px;
-        width: 100%;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        
-        animation: show-next-container 0.5s;
-
-        button {
-            padding: 16px;
-
-            color: black;
-            background: #5fdb6e;
-            font-size: 40px;
-            font-family: 'Climate Crisis';
-            cursor: pointer;
-            border: 5px solid black;
-            transition: 0.5s transform;
-
-            span {
-                font-style: italic;
-            }
-        }
-
-        button:active {
-            transform: scale(0.75);
-        }
-
-        button:focus {
-            outline: none;
-        }
-
-        @keyframes show-next-container {
-            from {
-                transform: translateY(200px);
-            }
-        }
-        
+    button:focus {
+      outline: none;
     }
+
+    @keyframes show-next-container {
+      from {
+        transform: translateY(200px);
+      }
+    }
+  }
 }
 
 #section-2 {
+  position: fixed;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+
+  perspective: 1000px;
+
+  #title-container-s2 {
     position: fixed;
+    top: 40%;
+    left: 50px;
+
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+
+    transform-origin: 100% 50%;
+
+    #title-s2 {
+      margin: 0;
+
+      font-size: 90px;
+      animation: title-s2-pertama-tampil 1s;
+    }
+    #title-kr-s2 {
+      margin: 0;
+
+      font-size: 40px;
+      font-weight: 100;
+      animation: title-s2-pertama-tampil 1.5s;
+    }
+
+    @keyframes title-s2-pertama-tampil {
+      from {
+        opacity: 0;
+        translate: 400px;
+      }
+    }
+    @keyframes title-kr-s2-pertama-tampil {
+      from {
+        opacity: 0;
+        translate: 800px;
+      }
+    }
+  }
+
+  #line-container-s2 {
+    position: fixed;
+    top: 20%;
+
+    #line-1-s2 {
+      position: absolute;
+      height: 40px;
+      width: 200px;
+      background: red;
+      box-shadow: 0 0 20px red;
+      animation: abc 2s;
+    }
+
+    @keyframes abc {
+      to {
+        width: 800px;
+      }
+    }
+  }
+
+  #background-container-s2 {
     display: none;
-    width: 100vw;
-    height: 100vh;
+    position: fixed;
+    right: 0;
+    width: 100%;
+    height: 100%;
 
-    perspective: 1000px;
+    #side-s2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 390px;
+      height: 100%;
 
-    #title-container-s2 {
-        position: fixed;
-        top: 40%;
-        left: 50px;
-        
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: white;
-
-        transform-origin: 100% 50%;
-
-        #title-s2 {
-            margin: 0;
-
-            font-size: 90px;   
-            animation: title-s2-pertama-tampil 1s;
-        }
-        #title-kr-s2 {
-            margin: 0;
-
-            font-size: 40px;
-            font-weight: 100;
-            animation: title-s2-pertama-tampil 1.5s;
-        }
-
-        @keyframes title-s2-pertama-tampil {
-            from {
-                opacity: 0;
-                translate: 400px;
-            }
-        }
-        @keyframes title-kr-s2-pertama-tampil {
-            from {
-                opacity: 0;
-                translate: 800px;
-            }
-        }
+      background: url(Lingkaran.svg),
+        linear-gradient(to bottom, #ac3636, #481d1d);
+      background-repeat: no-repeat;
+      box-shadow: -10px 0 10px #00000075 inset;
     }
 
-    #line-container-s2 {
-        position: fixed;
-        top: 20%;
+    #decoration-container-s2 {
+      position: absolute;
+      top: 0;
+      left: 390px;
+      width: 40px;
+      height: 100%;
 
-        #line-1-s2 {
-            position: absolute;
-            height: 40px;
-            width: 200px;
-            background: red;
-            box-shadow: 0 0 20px red;
-            animation: abc 2s;
-        }
+      #decoration-1-s2 {
+        width: 100%;
+        height: 100px;
 
-        @keyframes abc {
-            to {
-                width: 800px;
-            }
-        }
-    }
+        background: #ee1f34;
+      }
 
-    #background-container-s2 {
-        display: none;
-        position: fixed;
-        right: 0;
+      #decoration-2-s2 {
+        width: 100%;
+        height: 100px;
+
+        background: #26225c;
+      }
+
+      #decoration-3-s2 {
         width: 100%;
         height: 100%;
 
-        #side-s2 {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 390px;
-            height: 100%;
-
-            background: url(Lingkaran.svg), linear-gradient(to bottom, #ac3636,#481d1d);
-            background-repeat: no-repeat;
-            box-shadow: -10px 0 10px #00000075 inset;
-        }
-
-        #decoration-container-s2 {
-            position: absolute;
-            top: 0;
-            left: 390px;
-            width: 40px;
-            height: 100%;
-
-            #decoration-1-s2 {
-                width: 100%;
-                height: 100px;
-    
-                background: #ee1f34;
-            }
-    
-            #decoration-2-s2 {
-                width: 100%;
-                height: 100px;
-    
-                background: #26225c;
-            }
-    
-            #decoration-3-s2 {
-                width: 100%;
-                height: 100%;
-    
-                background: gray;
-            }
-        }
-
-        #content-container-s2 {
-            position: fixed;
-            top: 0;
-            left: 430px;
-            width: calc(100% + 2000px);
-            height: 100%;
-
-            background: white;
-
-            #kertas-s2 {
-                display: none;
-                position: absolute;
-                width: 700px;
-                padding: 16px;
-
-                transform-origin: 100% 100%;
-
-                background: url(marjan-blan-marjanblan-_kUxT8WkoeY-unsplash.jpg);
-                box-shadow: 0 10px 20px #0009;
-                font-size: 30px;
-                font-family: 'Montserrat';
-            }
-
-            #content-side-container-s2 {
-                position: absolute;
-                top: 0;
-                left: 936px;
-                width: 100%;
-                height: 100%;
-
-                h1 {
-                    position: absolute;
-                    left: 50px;
-                    margin: 0;
-
-                    background: linear-gradient(#ee1f34, #26225c);
-                    background-clip: text;
-                    color: transparent;
-                    font-size: 140px;
-                    font-family: 'Montserrat';
-                }
-
-                #content-side-line-s2 {
-                    position: absolute;
-                    left: 330px;
-                    
-                }
-
-                #content-side-chart-container-s2 {
-                    display: none;
-                    position: absolute;
-                    left: 650px;
-                    width: 300px;
-                    height: 100%;
-                    padding: 16px;
-                    box-sizing: border-box;
-                    flex-direction: column;
-
-                    @keyframes show-content-side-chart {
-                        from {
-                            transform: scale(0);
-                        }
-                        to {
-                            transform: scale(1);
-                        }
-                    }
-    
-                    #content-side-1-s2 {
-                        animation: show-content-side-chart 1s;
-                    }
-    
-                    #content-side-2-s2 {
-                        animation: show-content-side-chart 1.5s;
-                    }
-    
-                    #content-side-3-s2 {
-                        animation: show-content-side-chart 2s;
-                    }
-                }
-
-                img {
-                    height: 100%;
-                }
-            }
-        }
+        background: gray;
+      }
     }
+
+    #content-container-s2 {
+      position: fixed;
+      top: 0;
+      left: 430px;
+      width: calc(100% + 2000px);
+      height: 100%;
+
+      background: white;
+
+      #kertas-s2 {
+        display: none;
+        position: absolute;
+        width: 700px;
+        padding: 16px;
+
+        transform-origin: 100% 100%;
+
+        background: url(marjan-blan-marjanblan-_kUxT8WkoeY-unsplash.jpg);
+        box-shadow: 0 10px 20px #0009;
+        font-size: 30px;
+        font-family: "Montserrat";
+      }
+
+      #content-side-container-s2 {
+        position: absolute;
+        top: 0;
+        left: 936px;
+        width: 100%;
+        height: 100%;
+
+        h1 {
+          position: absolute;
+          left: 50px;
+          margin: 0;
+
+          background: linear-gradient(#ee1f34, #26225c);
+          background-clip: text;
+          color: transparent;
+          font-size: 140px;
+          font-family: "Montserrat";
+        }
+
+        #content-side-line-s2 {
+          position: absolute;
+          left: 330px;
+        }
+
+        #content-side-chart-container-s2 {
+          display: none;
+          position: absolute;
+          left: 650px;
+          width: 300px;
+          height: 100%;
+          padding: 16px;
+          box-sizing: border-box;
+          flex-direction: column;
+
+          @keyframes show-content-side-chart {
+            from {
+              transform: scale(0);
+            }
+            to {
+              transform: scale(1);
+            }
+          }
+
+          #content-side-1-s2 {
+            animation: show-content-side-chart 1s;
+          }
+
+          #content-side-2-s2 {
+            animation: show-content-side-chart 1.5s;
+          }
+
+          #content-side-3-s2 {
+            animation: show-content-side-chart 2s;
+          }
+        }
+
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
 }
 
 #section-3 {
-    display: none;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
 
-    background: white;
+  background: white;
 
-    #opening-container-s3 {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+  #opening-container-s3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 
-        #title-s3 {
-            position: absolute;
-            top: 200px;
-            left: 50px;
+    #title-s3 {
+      position: absolute;
+      top: 200px;
+      left: 50px;
 
-            color: #000;
-            font-family: sans-serif,Tahoma,Geneva,Verdana,sans-serif;
-            font-size: 100px;        
-        }
+      color: #000;
+      font-family: sans-serif, Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 100px;
+    }
+  }
+
+  #after-opening-container-s3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: radial-gradient(black, #030022);
+    opacity: 0;
+
+    #globe-s3 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 2;
+
+      border: none;
+      scale: 3;
+      translate: 0 0;
     }
 
-    #after-opening-container-s3 {
+    #after-opening-title-container-s3 {
+      display: none;
+      position: absolute;
+      left: 30px;
+      bottom: -120px;
+
+      font-family: "Montserrat";
+      transform: rotate(-90deg);
+      transform-origin: 0 0;
+
+      h1 {
+        margin: 0;
+        font-size: 70px;
+        color: #fff;
+
+        animation: show-after-opening-title 1s;
+      }
+
+      #after-opening-title-kr-s3 {
+        font-weight: 100;
+        font-size: 45px;
+
+        animation: show-after-opening-title 2s;
+      }
+    }
+
+    @keyframes show-after-opening-title {
+      from {
+        transform: translateX(-520px);
+      }
+    }
+
+    #country-list-container-s3 {
+      display: none;
+      position: absolute;
+      left: 530px;
+      top: 100px;
+      flex-wrap: wrap;
+
+      //animation: show-country-list 2s;
+
+      .country-s3 {
+        display: none;
+        width: 130px;
+        margin: 8px;
+
+        color: white;
+        font-family: "Montserrat";
+        font-weight: 300;
+        text-align: center;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    #latar-belakang-title-container-s3 {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      z-index: 3;
+
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(20px);
+
+      h1 {
+        font-family: "Montserrat";
+        font-size: 80px;
+      }
+    }
+
+    #timeline-s3 {
+      display: none;
+      position: absolute;
+      right: 100px;
+      bottom: 50px;
+      height: 190px;
+      align-items: center;
+      z-index: 3;
+
+      translate: -1300px 0;
+
+      #timeline-track-s3 {
+        width: 3500px;
+        height: 20px;
+        background-color: rgb(73, 73, 73);
+      }
+
+      #timeline-year-container-s3 {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
 
-        background: radial-gradient(black, #030022);
-        opacity: 0;
+        p {
+          position: absolute;
+          padding-right: 20px;
 
-        #globe-s3 {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-    
-            border: none;
-            scale: 3;
-            translate: 0 0;
+          background: linear-gradient(to right, transparent 90%, #55512f 10%);
+          color: #fff;
+          font-size: 28px;
+          font-family: "Montserrat";
+
+          transition: all 1s;
         }
 
-        #after-opening-title-container-s3 {
-            display: none;
-            position: absolute;
-            left: 30px;
-            bottom: -120px;
-    
-            font-family: 'Montserrat';
-            transform: rotate(-90deg);
-            transform-origin: 0 0;
-
-            h1 {
-                margin: 0;
-                font-size: 70px;
-                color: #fff;
-
-                animation: show-after-opening-title 1s;
-            }
-
-            #after-opening-title-kr-s3 {
-                font-weight: 100;
-                font-size: 45px;
-
-                animation: show-after-opening-title 2s;
-            }
+        p.year-highlight-up-s3 {
+          scale: 2;
+          translate: 0 -41px;
+          font-weight: bold;
+          background: linear-gradient(to right, transparent 90%, #ffe301 10%);
+          padding-right: 17px;
+          text-shadow: 0 0 8px black;
         }
 
-        @keyframes show-after-opening-title {
-            from {
-                transform: translateX(-520px);
-            }
+        p.year-highlight-down-s3 {
+          scale: 2;
+          translate: 0 41px;
+          font-weight: bold;
+          background: linear-gradient(to right, transparent 90%, #ffe301 10%);
+          padding-right: 17px;
+          text-shadow: 0 0 8px black;
+        }
+      }
+    }
+
+    #krisis-moneter-ilustrasi-s3 {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      opacity: 0.25;
+    }
+
+    #krisis-moneter-title-s3 {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      z-index: 4;
+
+      color: white;
+      font-family: "Montserrat";
+      font-size: 100px;
+
+
+    }
+
+    #krisis-moneter-sidebar-s3 {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 400px;
+      height: 100%;
+      padding: 16px;
+      flex-direction: column;
+      box-sizing: border-box;
+      z-index: 4;
+
+      background: transparent;
+
+      #krisis-moneter-asal-container-s3 {
+        #krisis-moneter-asal-title-s3 {
+          color: white;
+          font-family: "Montserrat";
         }
 
-        #country-list-container-s3 {
-            display: none;
-            position: absolute;
-            left: 530px;
-            top: 100px;
-            flex-wrap: wrap;
+        #krisis-moneter-thailand-s3 {
+          width: 160px;
+          margin: 10;
 
-            //animation: show-country-list 2s;
-
-            .country-s3 {
-                display: none;
-                width: 130px;
-                margin: 8px;
-
-                color: white;
-                font-family: 'Montserrat';
-                font-weight: 300;
-                text-align: center;
-
-                img {
-                    width: 100%;
-                }
-            }
-        }
-
-        #latar-belakang-title-container-s3 {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
+          img {
             width: 100%;
-            height: 100%;
-            justify-content: center;
-            align-items: center;
-
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(20px);
-
-            h1 {
-                font-family: 'Montserrat';
-                font-size: 80px;
-            }
+          }
+          p {
+            color: white;
+            font-family: "Montserrat";
+            text-align: center;
+          }
         }
+      }
 
-        #timeline-s3 {
-            display: none;
-            position: absolute;
-            right: 100px;
-            bottom: 50px;
-            height: 190px;
-            align-items: center;
+      #krisis-moneter-terdampak-title-s3 {
+        display: none;
+        position: absolute;
+        top: 245px;
+        left: 16px;
 
-            translate: -1300px 0;
-            
-            #timeline-track-s3 {
-                width: 3500px;
-                height: 20px;
-                background-color: rgb(73, 73, 73);
-            }
+        color: white;
+        font-family: "Montserrat";
+      }
 
-            #timeline-year-container-s3 {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
+      #krisis-moneter-terdampak-container-s3 {
+        display: none;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin-top: 60px;
+        flex-wrap: wrap;
 
-                p {
-                    position: absolute;
-                    padding-right: 20px;
+        overflow: scroll;
 
-                    background: linear-gradient(to right, transparent 90%, #55512f 10%);     
-                    color: #fff;          
-                    font-size: 28px;
-                    font-family: "Montserrat";
+        .krisis-moneter-country-s3 {
+          width: 160px;
+          margin: 10px;
 
-                    transition: all 1s;
-                }
-
-                p.year-highlight-up-s3 {
-                    scale: 2;
-                    translate: 0 -41px;
-                    font-weight: bold;
-                    background: linear-gradient(to right, transparent 90%, #ffe301 10%);
-                    padding-right: 17px;
-                }
-
-                p.year-highlight-down-s3 {
-                    scale: 2;
-                    translate: 0 41px;
-                    font-weight: bold;
-                    background: linear-gradient(to right, transparent 90%, #867700 10%);
-                    padding-right: 17px;
-                }
-            }
+          img {
+            width: 100%;
+          }
+          p {
+            color: white;
+            font-family: "Montserrat";
+            text-align: center;
+          }
         }
+      }
     }
+
+    #g7-title-s3 {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      z-index: 4;
+
+      color: white;
+      font-family: 'Montserrat';
+      font-size: 150px;
+      text-shadow: 0 10px 20px black;
+    }
+
+    #g7-sidebar-1-s3 {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 100%;
+      padding: 16px;
+      flex-direction: column;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+      z-index: 4;
+
+      background: linear-gradient(to right, black, transparent);
+
+      .g7-country-s3 {
+        width: 160px;
+        height: 140px;
+        margin: 10px;
+
+        img {
+          width: 100%;
+        }
+        p {
+          color: white;
+          font-family: "Montserrat";
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  #g7-sidebar-2-s3 {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 200px;
+    width: 200px;
+    height: 100%;
+    padding: 16px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    z-index: 4;
+
+    //background: linear-gradient(to right, black, transparent);
+
+    .g7-country-s3 {
+      width: 160px;
+      height: 140px;
+      margin: 10px;
+
+      img {
+        width: 100%;
+      }
+      p {
+        color: white;
+        font-family: "Montserrat";
+        text-align: center;
+      }
+    }
+  }
+
+  #g20-pertama-s3 {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 4;
+
+    h1 {
+      margin: 0 0 14px 0;
+      font-size: 80px;
+      color: white;
+      font-family: "Montserrat";
+    }
+
+    img {
+      width: 200px;
+    }
+  }
 }

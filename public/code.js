@@ -16,6 +16,13 @@ window.addEventListener('load', () => {
     daftarGerakan(2, 1, section3.gerakan2)
     daftarGerakan(2, 2, section3.gerakan3)
     daftarGerakan(2, 3, section3.gerakan4)
+    daftarGerakan(2, 4, section3.gerakan5)
+    daftarGerakan(2, 5, section3.gerakan6)
+    daftarGerakan(2, 6, section3.gerakan7)
+    daftarGerakan(2, 7, section3.gerakan8)
+    daftarGerakan(2, 8, section3.gerakan9)
+    daftarGerakan(2, 9, section3.gerakan10)
+    daftarGerakan(2, 10, section3.gerakan11)
 
     mulaiPresentasi()
 })
