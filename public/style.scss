@@ -718,6 +718,8 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
 
+  scrollbar-width: none;
+
   #section-1-s4 {
     width: 100%;
     height: 2000px;
@@ -814,7 +816,7 @@ body {
     width: 200px;
     z-index: 2;
 
-    filter: drop-shadow(0 5px 5px white)
+    filter: drop-shadow(0 0 10px white)
   }
 
   #background-kiri-s5 {
