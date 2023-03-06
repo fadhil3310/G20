@@ -94,10 +94,11 @@ export function gerakan3() {
 }
 
 export function gerakan4() {
-    backgroundContainer.animate([
-        {transform: 'translateX(-1000px)'},
-        {transform: 'translateX(-2000px)'}
-    ], { duration: 1500, easing: 'ease-out' })
-    backgroundContainer.style.transform = 'translateX(-2000px)'
+    gsap.to(backgroundContainer, {
+        x: -2000,
+        display: 'none',
+        duration: 1.5,
+        onComplete: () => section2.style.display = 'none'
+    })
     keGerakanSelanjutnya()
 }

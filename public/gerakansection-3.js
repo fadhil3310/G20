@@ -29,8 +29,10 @@ const g7Sidebar2 = document.querySelector('#g7-sidebar-2-s3')
 
 const g20pertama = document.querySelector('#g20-pertama-s3')
 
+const transitionOverlay = document.querySelector('#transition-overlay-s3')
+
+// Tampilkan opening section 3
 export function gerakan1() {
-    
     section3.style.display = 'block'
 
     section3.animate([
@@ -41,9 +43,13 @@ export function gerakan1() {
             transform: 'translateX(0)'
         }
     ], { duration: 1500, easing: 'ease-out' })
+
+    globe.style.display = 'none'
 }
 
 export function gerakan2() {
+    globe.style.display = 'block'
+
     section3.animate([
         {
             background: 'white'
@@ -358,7 +364,7 @@ export function gerakan9() {
             timelineYear2008.classList.add('year-highlight-down-s3')
             globe.contentWindow.accelerateToRotation(0.55, 143, 1000)
 
-            krisisMoneterIlustrasi.src = "./map.mp4"
+            krisisMoneterIlustrasi.src = "./conference.mp4"
             krisisMoneterIlustrasi.play()
             gsap.to(krisisMoneterIlustrasi, {
                 opacity: 0.25,
@@ -422,15 +428,23 @@ export function gerakan11() {
     gsap.to(globe, {
         x: -1300,
         y: 100,
-        duration: 3,
-        onComplete: () => {
-            keSectionBerikutnya()
-        }
+        duration: 3
     })
     gsap.to(timeline, {
         x: -1360,
         y: 0,
         duration: 3
+    })
+
+    transitionOverlay.style.display = 'block'
+    gsap.to(transitionOverlay, {
+        scale: 1,
+        duration: 1,
+        delay: 2,
+        onComplete: () => {
+            section3.style.display = 'none'
+            keGerakanSelanjutnya()
+        }
     })
 }
 

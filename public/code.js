@@ -1,6 +1,9 @@
 import * as section1 from "./gerakansection-1.js"
 import * as section2 from "./gerakansection-2.js"
 import * as section3 from "./gerakansection-3.js"
+import * as section4 from "./gerakansection-4.js"
+import * as section5 from "./gerakansection-5.js"
+import * as section6 from "./gerakansection-6.js"
 
 window.addEventListener('load', () => {
     daftarGerakan(0, 0, section1.gerakan1)
@@ -23,6 +26,16 @@ window.addEventListener('load', () => {
     daftarGerakan(2, 8, section3.gerakan9)
     daftarGerakan(2, 9, section3.gerakan10)
     daftarGerakan(2, 10, section3.gerakan11)
+
+    daftarGerakan(3, 0, section4.gerakan1)
+    daftarGerakan(3, 1, section4.gerakan2)
+    daftarGerakan(3, 2, section4.gerakan3)
+
+    daftarGerakan(4, 0, section5.gerakan1)
+    daftarGerakan(4, 1, section5.gerakan2)
+
+    daftarGerakan(5, 0, section6.gerakan1)
+    daftarGerakan(5, 1, section6.gerakan2)
 
     mulaiPresentasi()
 })
