@@ -11,13 +11,13 @@ export function gerakan1() {
 
     backgroundKiri.style.display = 'block'
     gsap.from(backgroundKiri, {
-        xPercent: -50,
+        xPercent: -100,
         yPercent: 100,
         duration: 1.5,
         onComplete: () => {
             backgroundKanan.style.display = 'block'
             gsap.from(backgroundKanan, {
-                xPercent: 50,
+                xPercent: 100,
                 yPercent: -100,
                 duration: 1.5,
                 onComplete: () => {
@@ -41,16 +41,17 @@ export function gerakan2() {
 
     gsap.to(g20Logo, {
         scale: 0,
-        duration: 1.5,
+        opacity: 0,
+        duration: 1,
         onComplete: () => {
             gsap.to(backgroundKiri, {
-                xPercent: -50,
+                xPercent: -100,
                 yPercent: 100,
                 duration: 1.5,
             })
         
             gsap.to(backgroundKanan, {
-                xPercent: 50,
+                xPercent: 100,
                 yPercent: -100,
                 duration: 1.5,
             })
