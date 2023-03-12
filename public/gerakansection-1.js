@@ -18,10 +18,11 @@ export function gerakan1() {
     background.style.transform = 'scale(3)'
     
     titleh1.animate([
-        {transform: 'scale(1)'},
-        {transform: 'scale(2)'}
+        {transform: 'scale(1)', fontWeight: 100},
+        {transform: 'scale(3)', fontWeight: 800}
     ], { duration: 5000, easing: 'ease-out' })
-    titleh1.style.transform = 'scale(2)'
+    titleh1.style.transform = 'scale(3)'
+    titleh1.style.fontWeight = 800
 
     backgroundOverlay.animate([
         {transform: 'scale(1)'},
